@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "educationservice"
+version = "0.1.0"
+description = ""
+authors = ["AndreyKosov <andrey.kosov.05@inbox.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
