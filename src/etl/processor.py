@@ -13,7 +13,7 @@ class UserEducation:
     def get_users_educations(self) -> List[Optional[str]]:
         df: pd.DataFrame = pd.read_csv(self.file_path)
         educations = df[self.feature].str.split('(', expand=True)[0]
-        educations = educations.where(pd.notnull(educations), None)
+        educations = educations.where(pd.notnull(educations), '')
         return educations.tolist()
 
 

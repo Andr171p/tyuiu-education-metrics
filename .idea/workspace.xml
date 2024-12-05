@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03283898-6692-40f2-aaa2-bfc8dc20a3bd" name="Changes" comment="[tyuiu-education-metrics] 05.12.2024">
-      <change afterPath="$PROJECT_DIR$/src/etl/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/etl/processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yandex/client.py" afterDir="false" />
+    <list default="true" id="03283898-6692-40f2-aaa2-bfc8dc20a3bd" name="Changes" comment="[tyuiu-education-metrics] 05.12.2024 develop api module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etl/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/etl/processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/yandex/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/yandex/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/yandex/geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/yandex/geocoder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,11 +175,20 @@
       <option name="project" value="LOCAL" />
       <updated>1733355255036</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[tyuiu-education-metrics] 05.12.2024 develop api module">
+      <option name="closed" value="true" />
+      <created>1733413686501</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733413686501</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[tyuiu-education-metrics] 05.12.2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-education-metrics] 05.12.2024" />
+    <MESSAGE value="[tyuiu-education-metrics] 05.12.2024 develop api module" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-education-metrics] 05.12.2024 develop api module" />
   </component>
 </project>

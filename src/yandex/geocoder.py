@@ -1,11 +1,11 @@
 import asyncio
 import aiohttp
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from dataclasses import dataclass
 
 from src.yandex.schemas import GeopointsSchema
-from src.yandex import client
+from src.yandex.client import HTTPClient
 from src.config import config
 
 
@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 @dataclass
-class YandexGeocoder:
+class YandexGeocoder(HTTPClient):
     api_key: str = config.yandex_api.key
     geocoder_url: str = config.yandex_api.base_url
 
@@ -25,15 +25,13 @@ class YandexGeocoder:
             'format': 'json'
         }
         async with aiohttp.ClientSession() as session:
-            data = await client.fetch(
+            data = await self.fetch(
                 session=session,
                 url=config.yandex_api.base_url,
                 params=params
             )
-        geopoint: List[dict] = data['response']['GeoObjectCollection']['featureMember']
-        if len(geopoint) == 0:
-            return
-        lat, lon = geopoint[0]['GeoObject']['Point']['pos'].split(' ')
+            print(data)
+        lat, lon = self._get_position(data)
         logger.info(f"[{address}]: {lon}:{lat}")
         return self._to_datalens_response(lon, lat)
 
@@ -54,6 +52,14 @@ class YandexGeocoder:
         return geopoints
 
     @staticmethod
+    def _get_position(data: Dict[str, Any]) -> Tuple[str, str] | None:
+        geopoint: List[dict] = data['response']['GeoObjectCollection']['featureMember']
+        if len(geopoint) == 0:
+            return
+        lat, lon = geopoint[0]['GeoObject']['Point']['pos'].split(' ')
+        return lat, lon
+
+    @staticmethod
     def _to_datalens_response(*args, **kwargs) -> Optional[GeopointsSchema]:
         if len(args) == 2 and all(isinstance(arg, str) for arg in args):
             return GeopointsSchema.from_str_points(*args)
@@ -61,21 +67,7 @@ class YandexGeocoder:
             return GeopointsSchema(**kwargs)
 
 
-async def addresses_to_geopoints(addresses: List[str]) -> List[List[float]]:
-        geopoints: List[List[float]] = []
-        async with aiohttp.ClientSession():
-            tasks = [
-                YandexGeocoder().address_to_geopoint(address)
-                if address is not None else ''
-                for address in addresses
-            ]
-            responses = await asyncio.gather(*tasks)
-            for response in responses:
-                geopoints.append(response)
-        return geopoints
-
-
-print(asyncio.run(YandexGeocoder().address_to_geopoint('Муниципальное автономное общеобразовательное учреждение гимназия №16 города Тюмени, г. Тюмень')))
+print(asyncio.run(YandexGeocoder().address_to_geopoint('')))
 '''from src.etl.processor import UserEducation
 
 if __name__ == "__main__":
