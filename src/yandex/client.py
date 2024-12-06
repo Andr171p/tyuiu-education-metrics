@@ -8,8 +8,9 @@ class HTTPClient:
     def is_ok(response: aiohttp.ClientResponse) -> bool:
         return True if response.status == 200 else False
 
+    @classmethod
     async def fetch_one(
-            self,
+            cls,
             session: aiohttp.ClientSession,
             url: str,
             params: Dict[str, Any]
@@ -18,17 +19,18 @@ class HTTPClient:
                 url=url,
                 params=params
         ) as response:
-            if self.is_ok(response):
+            if cls.is_ok(response):
                 return await response.json()
 
+    @classmethod
     async def fetch_all(
-            self,
+            cls,
             urls: List[str],
             params_list: List[Dict[str, Any]]
     ) -> tuple:
         async with aiohttp.ClientSession() as session:
             tasks = [
-                self.fetch_one(session, url, params)
+                cls.fetch_one(session, url, params)
                 for url, params in zip(urls, params_list)
             ]
             responses = await asyncio.gather(*tasks, return_exceptions=True)
