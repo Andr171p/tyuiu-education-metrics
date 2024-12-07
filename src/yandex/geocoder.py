@@ -25,7 +25,7 @@ class YandexGeocoder(HTTPClient):
             'format': 'json'
         }
         async with aiohttp.ClientSession() as session:
-            data = await self.fetch(
+            data = await self.fetch_one(
                 session=session,
                 url=config.yandex_api.base_url,
                 params=params
@@ -39,17 +39,7 @@ class YandexGeocoder(HTTPClient):
             self,
             addresses: List[str]
     ) -> List[List[float]]:
-        geopoints: List[List[float]] = []
-        async with aiohttp.ClientSession():
-            tasks = [
-                self.address_to_geopoint(address)
-                if address is not None else ''
-                for address in addresses
-            ]
-            responses = await asyncio.gather(*tasks)
-            for response in responses:
-                geopoints.append(response)
-        return geopoints
+        ...
 
     @staticmethod
     def _get_position(data: Dict[str, Any]) -> Tuple[str, str] | None:

@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03283898-6692-40f2-aaa2-bfc8dc20a3bd" name="Changes" comment="[tyuiu-education-metrics] 06.12.2024 http client">
+    <list default="true" id="03283898-6692-40f2-aaa2-bfc8dc20a3bd" name="Changes" comment="[tyuiu-education-metrics] 07.12.2024 http class">
+      <change afterPath="$PROJECT_DIR$/data/data 2019-2024.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etl/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/etl/processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/yandex/geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/yandex/geocoder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +49,13 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\andre\EducationService\data" />
+      <recent name="C:\Users\andre\EducationService" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\EducationService\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.geocoder">
+  <component name="RunManager" selected="Python.processor">
     <configuration name="geocoder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="EducationService" />
       <option name="ENV_FILES" value="" />
@@ -141,8 +146,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.geocoder" />
         <item itemvalue="Python.processor" />
+        <item itemvalue="Python.geocoder" />
         <item itemvalue="Python.logger" />
         <item itemvalue="Python.location" />
       </list>
@@ -188,13 +193,22 @@
       <option name="project" value="LOCAL" />
       <updated>1733433036050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[tyuiu-education-metrics] 07.12.2024 http class">
+      <option name="closed" value="true" />
+      <created>1733518719763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733518719763</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[tyuiu-education-metrics] 05.12.2024" />
     <MESSAGE value="[tyuiu-education-metrics] 05.12.2024 develop api module" />
     <MESSAGE value="[tyuiu-education-metrics] 06.12.2024 http client" />
-    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-education-metrics] 06.12.2024 http client" />
+    <MESSAGE value="[tyuiu-education-metrics] 07.12.2024 http class" />
+    <option name="LAST_COMMIT_MESSAGE" value="[tyuiu-education-metrics] 07.12.2024 http class" />
   </component>
 </project>
